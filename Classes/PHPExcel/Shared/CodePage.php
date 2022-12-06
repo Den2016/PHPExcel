@@ -35,7 +35,7 @@ class PHPExcel_Shared_CodePage
      * @return string Code Page Name
      * @throws PHPExcel_Exception
      */
-    public static function NumberToName($codePage = 1252)
+    public static function NumberToName($codePage = 1251)
     {
         switch ($codePage) {
             case 367:
@@ -150,6 +150,8 @@ class PHPExcel_Shared_CodePage
                 return 'UTF-7';    //    Unicode (UTF-7)
             case 65001:
                 return 'UTF-8';    //    Unicode (UTF-8)
+			default:               // Добавлено    
+				return 'CP1251';   // Добавлено
         }
         throw new PHPExcel_Exception('Unknown codepage: ' . $codePage);
     }
